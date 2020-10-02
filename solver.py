@@ -58,7 +58,7 @@ class Solver:
         
         best_acc = 0
         for iter_count in range(self.args.train_iterations):
-            if iter_count is not 0 and iter_count % lr_change == 0:
+            if iter_count != 0 and iter_count % lr_change == 0:
                 for param in optim_task_model.param_groups:
                     param['lr'] = param['lr'] / 10
             labeled_imgs, labels = next(labeled_data)
